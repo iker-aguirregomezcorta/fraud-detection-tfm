@@ -1,0 +1,11 @@
+Manual review cost ($),Point type,Reviewed transactions,Economic exposure captured ($),Cumulative % transactions,Cumulative % economic exposure
+3,Elbow,18250,503685.16,15.452,82.716
+3,Max capacity (Framework A optimum),105910,608052.35,89.672,99.856
+5,Elbow,14500,483945.85,12.277,79.475
+5,Max capacity (Framework A optimum),74690,597824.72,63.239,98.176
+10,Elbow,10500,453155.39,8.89,74.418
+10,Max capacity (Framework A optimum),44785,570295.83,37.919,93.655
+15,Elbow,8000,426371.24,6.773,70.02
+15,Max capacity (Framework A optimum),32495,548266.68,27.513,90.038
+20,Elbow,7500,419521.3,6.35,68.895
+20,Max capacity (Framework A optimum),25620,531005.04,21.692,87.203

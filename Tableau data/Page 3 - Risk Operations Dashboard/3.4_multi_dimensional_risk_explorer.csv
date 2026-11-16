@@ -1,0 +1,21 @@
+Dimension,Category,Transactions,Fraud transactions,Fraud rate (%),Average EFL ($),Total EFL ($)
+Observed Behaviour,Fraudulent,20665,20665,100.0,70.35,1453872.08
+Observed Behaviour,Legitimate,569875,0,0.0,2.79,1590782.1
+Economic Risk,"Very Low
+($0–1)",383835,1480,0.39,0.31,120293.18
+Economic Risk,"Low
+($1–5)",132015,2700,2.05,2.24,295832.99
+Economic Risk,"Medium
+($5–20)",49070,5265,10.73,9.77,479236.97
+Economic Risk,"High
+($20–100)",20495,7525,36.72,43.05,882385.92
+Economic Risk,"Very High
+($100+)",5125,3695,72.1,247.2,1266905.12
+Transaction Size,$0–10,7655,550,7.18,0.58,4472.78
+Transaction Size,$10–20,21640,1680,7.76,1.13,24521.87
+Transaction Size,$20–50,174950,5535,3.16,1.11,193514.86
+Transaction Size,$50–100,164085,4815,2.93,2.09,343349.52
+Transaction Size,$100–200,128070,3975,3.1,4.28,548489.47
+Transaction Size,$200–500,71100,3020,4.25,13.78,979489.31
+Transaction Size,$500–1000,15890,890,5.6,40.59,644988.57
+Transaction Size,$1000+,7150,200,2.8,42.77,305827.8

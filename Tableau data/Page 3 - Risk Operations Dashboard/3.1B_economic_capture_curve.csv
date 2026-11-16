@@ -1,0 +1,11 @@
+Risk tier,Cumulative % transactions reviewed,Cumulative % economic exposure captured
+"Very High
+($100+)",0.9,41.6
+"High
+($20–100)",4.4,70.6
+"Medium
+($5–20)",12.7,86.3
+"Low
+($1–5)",35.1,96.0
+"Very Low
+($0–1)",100.0,100.0

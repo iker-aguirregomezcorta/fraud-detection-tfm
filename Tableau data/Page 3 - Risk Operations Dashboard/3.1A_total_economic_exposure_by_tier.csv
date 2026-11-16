@@ -1,0 +1,11 @@
+Risk tier,Transactions,Fraud transactions,Fraud rate (%),Average transaction amount ($),Average EFL ($),Total economic exposure ($),% transactions,% total economic exposure
+"Very Low
+($0–1)",383835,1480,0.39,71.96,0.31,120293.18,65.0,4.0
+"Low
+($1–5)",132015,2700,2.05,174.19,2.24,295832.99,22.4,9.7
+"Medium
+($5–20)",49070,5265,10.73,357.76,9.77,479236.97,8.3,15.7
+"High
+($20–100)",20495,7525,36.72,416.52,43.05,882385.92,3.5,29.0
+"Very High
+($100+)",5125,3695,72.1,570.51,247.2,1266905.12,0.9,41.6

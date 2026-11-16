@@ -1,0 +1,22 @@
+Risk tier,Manual review cost ($),Point type,Cumulative % transactions,Cumulative % EFL captured,Reviewed transactions (full dataset),Economic exposure captured ($),"Net saving ($, full dataset)"
+Origin,,Curve,0.0,0.0,,,
+"Very High
+($100+)",,Curve,0.9,41.6,,,
+"High
+($20–100)",,Curve,4.4,70.6,,,
+"Medium
+($5–20)",,Curve,12.7,86.3,,,
+"Low
+($1–5)",,Curve,35.1,96.0,,,
+"Very Low
+($0–1)",,Curve,100.0,100.0,,,
+,3.0,Elbow,3.09,72.648,18250.0,,2157130.0
+,3.0,Max capacity (Framework A optimum),17.934,98.246,105910.0,,2673510.0
+,5.0,Elbow,2.455,68.835,14500.0,,2023280.0
+,5.0,Max capacity (Framework A optimum),12.648,94.56,74690.0,,2505590.0
+,10.0,Elbow,1.778,63.463,10500.0,,1827235.0
+,10.0,Max capacity (Framework A optimum),7.584,86.381,44785.0,,2182145.0
+,15.0,Elbow,1.355,58.465,8000.0,,1660050.0
+,15.0,Max capacity (Framework A optimum),5.503,80.902,32495.0,,1975760.0
+,20.0,Elbow,1.27,57.117,7500.0,,1589030.0
+,20.0,Max capacity (Framework A optimum),4.338,77.543,25620.0,,1848525.0

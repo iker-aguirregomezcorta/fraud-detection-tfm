@@ -1,0 +1,11 @@
+Manual review cost ($),Point type,Reviewed transactions,Cumulative % transactions,Fraud losses avoided ($),Cumulative % economic exposure,Net saving ($)
+3,Elbow,18250,3.09,2211880.0,69.215,2157130.0
+3,Max capacity (Framework A optimum),105910,17.934,2991240.0,93.603,2673510.0
+5,Elbow,14500,2.455,2095780.0,65.582,2023280.0
+5,Max capacity (Framework A optimum),74690,12.648,2879040.0,90.092,2505590.0
+10,Elbow,10500,1.778,1932235.0,60.464,1827235.0
+10,Max capacity (Framework A optimum),44785,7.584,2629995.0,82.299,2182145.0
+15,Elbow,8000,1.355,1780050.0,55.702,1660050.0
+15,Max capacity (Framework A optimum),32495,5.503,2463185.0,77.079,1975760.0
+20,Elbow,7500,1.27,1739030.0,54.418,1589030.0
+20,Max capacity (Framework A optimum),25620,4.338,2360925.0,73.879,1848525.0
