@@ -1,67 +1,54 @@
-# Fraud Detection: Cost-Sensitive Transaction Risk Scoring and Review Prioritization
-
-**Master's Thesis (TFM)** · Master in Data Science, Big Data & Business Analytics · Universidad Complutense de Madrid · September 2026
-**Author:** Iker Aguirregomezcorta Carrillo · [LinkedIn](https://www.linkedin.com/in/iker-aguirregomezcorta-carrillo)
-
+Fraud Detection: Cost-Sensitive Transaction Risk Scoring and Review Prioritization
+Master's Thesis (TFM) · Master in Data Science, Big Data & Business Analytics · Universidad Complutense de Madrid · September 2026  
+Author: Iker Aguirregomezcorta Carrillo · LinkedIn
 > An **end-to-end fraud detection framework** that goes from raw data to an operational decision: exploratory analysis, feature engineering and machine learning to score each transaction, an economic layer that weighs that score against the transaction's value, SHAP explanations for every decision, an API and Tableau dashboards. The goal is to help decide **which transactions to review first, and how many reviews are worth doing**, when manual review capacity is limited.
-
-## Key results
-
-| | |
-|---|---|
-| **Data** | 590,540 real e-commerce transactions (IEEE-CIS), 3.5% fraud (≈28:1 imbalance) |
-| **Model** | Tuned XGBoost, **AUC 0.945** on a held-out test set of 118,108 transactions |
-| **Business outcome** | At a $3 manual review cost, reviewing only **3.1% of transactions** delivers **≈$2.16M in net savings**, 80.7% of the maximum achievable |
-| **Robustness** | Across review costs of $3–$20, the same strategy captures 80.7%–86.0% of achievable net savings while reviewing 1.3%–3.1% of transactions |
-
-## The approach
-
-1. **Exploratory analysis.** Transaction amount alone barely separates fraud from legitimate activity. Missing data turned out to be a signal: transactions *with* identity/device data show a 7.85% fraud rate versus 2.09% without it.
-2. **Model development.** PyCaret AutoML as a quick benchmark, then manual feature engineering (missingness flags, hour/day features, V-column reduction from 339 to 189) and a comparison of six models. XGBoost was kept for its ranking quality and flexibility across thresholds.
-3. **From probability to money.** Each transaction gets an **Expected Financial Loss**: `EFL = fraud probability × transaction amount`.
-   - **Framework A (unconstrained):** review a transaction only if its EFL is at least the cost of reviewing it.
-   - **Framework B (limited capacity):** rank transactions by EFL and find the "elbow" where extra reviews stop paying off.
-   - Review cost is treated as a parameter ($3–$20) because organisations rarely disclose it; the low end is anchored on an industry figure of about $3.47 per review.
-4. **Interpretability.** SHAP at global and transaction level, so each review decision comes with the factors that drove it.
-5. **Deployment.** A FastAPI service that scores single transactions or CSV batches, applies the EFL rule and returns an HTML case view with SHAP explanations.
-6. **Dashboards.** Three Tableau pages: executive overview, review strategy and risk operations. *(Tableau Public link coming soon.)*
-
-## Repository contents
-
-| Path | What it is |
-|---|---|
-| `Iker_Aguirregomezcorta_Carrillo_Fraud_Detection_Thesis.pdf` | The thesis (21 pages) |
-| `Iker_Aguirregomezcorta_Carrillo_Fraud_Detection_Notebook.ipynb` | Full analysis notebook (EDA → modelling → cost-benefit → SHAP → deployment → Tableau export) |
-| `Iker_Aguirregomezcorta_Carrillo_Fraud_Detection_Notebook.html` | Rendered notebook, readable without running anything |
-| `Annexes/` | Annexes 1–6 as HTML (EDA, modelling, risk structure, economic framework, interpretability, deployment) |
-| `deployment/` | FastAPI app (`app.py`), `requirements.txt` and the final model (`fraud_model.pkl`, `features.pkl`) |
-| `Tableau data/` | Aggregated tables behind the three dashboard pages |
-
-## Data
-
-The dataset is **not included** in this repository. It belongs to the [IEEE-CIS Fraud Detection](https://www.kaggle.com/c/ieee-fraud-detection) Kaggle competition and must be downloaded from there (Kaggle account and acceptance of the competition rules required). Place `train_transaction.csv` and `train_identity.csv` in a `Data/` folder.
-
-## How to run
-
-**Notebook**
-1. Download the data as described above into `Data/` at the repository root. All paths in the notebook are relative to that root.
-2. Install the libraries used: pandas, numpy, scikit-learn, xgboost, lightgbm, pycaret, shap, scipy, matplotlib, seaborn, joblib.
-3. Run the notebook top to bottom. Section 10 regenerates the files the API needs in `deployment/`, and section 11 writes the dashboard tables to `Tableau data/`.
-
-**API**
+Key results
+	
+Data	590,540 real e-commerce transactions (IEEE-CIS), 3.5% fraud (≈28:1 imbalance)
+Model	Tuned XGBoost, AUC 0.945 on a held-out test set of 118,108 transactions
+Business outcome	At a $3 manual review cost, reviewing only 3.1% of transactions delivers ≈$2.16M in net savings, 80.7% of the maximum achievable
+Robustness	Across review costs of $3–$20, the same strategy captures 80.7%–86.0% of achievable net savings while reviewing 1.3%–3.1% of transactions
+The approach
+Exploratory analysis. Transaction amount alone barely separates fraud from legitimate activity. Missing data turned out to be a signal: transactions with identity/device data show a 7.85% fraud rate versus 2.09% without it.
+Model development. PyCaret AutoML as a quick benchmark, then manual feature engineering (missingness flags, hour/day features, V-column reduction from 339 to 189) and a comparison of six models. XGBoost was kept for its ranking quality and flexibility across thresholds.
+From probability to money. Each transaction gets an Expected Financial Loss: `EFL = fraud probability × transaction amount`.
+Framework A (unconstrained): review a transaction only if its EFL is at least the cost of reviewing it.
+Framework B (limited capacity): rank transactions by EFL and find the "elbow" where extra reviews stop paying off.
+Review cost is treated as a parameter ($3–$20) because organisations rarely disclose it; the low end is anchored on an industry figure of about $3.47 per review.
+Interpretability. SHAP at global and transaction level, so each review decision comes with the factors that drove it.
+Deployment. A FastAPI service that scores single transactions or CSV batches, applies the EFL rule and returns an HTML case view with SHAP explanations.
+Dashboards. Three Tableau pages: executive overview, review strategy and risk operations. (Tableau Public link coming soon.)
+Repository contents
+Path	What it is
+`Iker_Aguirregomezcorta_Carrillo_Fraud_Detection_Thesis.pdf`	The thesis (21 pages)
+`Iker_Aguirregomezcorta_Carrillo_Fraud_Detection_Notebook.ipynb`	Full analysis notebook (EDA → modelling → cost-benefit → SHAP → deployment → Tableau export). If GitHub can't display it, open it in nbviewer
+`Iker_Aguirregomezcorta_Carrillo_Fraud_Detection_Notebook.html`	Rendered notebook, readable without running anything
+`Annexes/`	Annexes 1–6 as HTML (EDA, modelling, risk structure, economic framework, interpretability, deployment)
+`deployment/`	FastAPI app (`app.py`), `requirements.txt` and the final model (`fraud_model.pkl`, `features.pkl`)
+`Tableau data/`	Aggregated tables behind the three dashboard pages
+Data
+The dataset is not included in this repository. It belongs to the IEEE-CIS Fraud Detection Kaggle competition and must be downloaded from there (Kaggle account and acceptance of the competition rules required). Place `train_transaction.csv` and `train_identity.csv` in a `Data/` folder.
+With the Kaggle command-line tool (after accepting the competition rules on Kaggle and setting up your API token):
+```bash
+pip install kaggle
+kaggle competitions download -c ieee-fraud-detection -p Data
+unzip Data/ieee-fraud-detection.zip -d Data
+```
+How to run
+Notebook
+Download the data as described above into `Data/` at the repository root. All paths in the notebook are relative to that root.
+Install the libraries used: pandas, numpy, scikit-learn, xgboost, lightgbm, pycaret, shap, scipy, matplotlib, seaborn, joblib.
+Run the notebook top to bottom. Section 10 regenerates the files the API needs in `deployment/`, and section 11 writes the dashboard tables to `Tableau data/`.
+API
 ```bash
 cd deployment
 pip install -r requirements.txt
 uvicorn app:app --reload
 ```
 Then open `http://127.0.0.1:8000/docs`. The API needs the test-set files generated by the notebook (step 3 above), as they are too large and data-derived to be stored here. The default review cost in the API is $10.
-
-## Limitations
-
-- A single historical dataset; patterns may drift over time.
-- Manual review costs are assumed scenarios, not figures from a specific organisation.
-- The system has not been evaluated on live production data.
-
-## Tech stack
-
+Limitations
+A single historical dataset; patterns may drift over time.
+Manual review costs are assumed scenarios, not figures from a specific organisation.
+The system has not been evaluated on live production data.
+Tech stack
 Python · pandas · scikit-learn · XGBoost · LightGBM · PyCaret · SHAP · FastAPI · Tableau
