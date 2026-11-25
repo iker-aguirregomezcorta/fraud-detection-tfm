@@ -24,7 +24,7 @@
    - Review cost is treated as a parameter ($3–$20) because organisations rarely disclose it; the low end is anchored on an industry figure of about $3.47 per review.
 4. **Interpretability.** SHAP at global and transaction level, so each review decision comes with the factors that drove it.
 5. **Deployment.** A FastAPI service that scores single transactions or CSV batches, applies the EFL rule and returns an HTML case view with SHAP explanations.
-6. **Dashboards.** Three Tableau pages: executive overview, review strategy and risk operations. **[View the interactive dashboards on Tableau Public](https://public.tableau.com/app/profile/iker.aguirregomezcorta/viz/FraudDetectionCost-SensitiveReviewPrioritization/Home)**
+6. **Dashboards.** An interactive Tableau workbook with a home page and five sections: fraud overview, economic framework analysis, risk prioritization, recommendations, and conclusions & lessons learned. **[View the interactive dashboards on Tableau Public](https://public.tableau.com/app/profile/iker.aguirregomezcorta/viz/FraudDetectionCost-SensitiveReviewPrioritization/Home)**
 
 ## Repository contents
 
@@ -35,7 +35,7 @@
 | `fraud_detection_notebook.html` | Rendered notebook, readable without running anything |
 | `Annexes/` | Annexes 1–6 as HTML (EDA, modelling, risk structure, economic framework, interpretability, deployment) |
 | `deployment/` | FastAPI app (`app.py`), `requirements.txt` and the final model (`fraud_model.pkl`, `features.pkl`) |
-| `Tableau data/` | Aggregated tables behind the three dashboard pages |
+| `Tableau data/` | Aggregated tables behind the dashboards |
 
 ## Data
 
